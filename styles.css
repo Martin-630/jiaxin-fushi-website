@@ -611,6 +611,23 @@ a {
   object-fit: cover;
 }
 
+.image-viewer-trigger {
+  cursor: zoom-in;
+}
+
+.image-viewer-trigger:focus-visible {
+  outline: 3px solid rgba(184, 137, 47, 0.72);
+  outline-offset: -3px;
+}
+
+.product-card img.product-image-contain,
+.detail-hero-media img.product-image-contain,
+.detail-image-card img.product-image-contain {
+  object-fit: contain;
+  padding: 12px;
+  background: #ffffff;
+}
+
 .placeholder-card div {
   display: grid;
   place-items: center;
@@ -622,6 +639,105 @@ a {
   color: var(--muted);
   font-weight: 800;
   text-align: center;
+}
+
+.image-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+}
+
+.image-viewer[hidden] {
+  display: none;
+}
+
+.image-viewer-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(16, 18, 20, 0.78);
+}
+
+.image-viewer-panel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  width: min(1120px, 100%);
+  height: min(780px, calc(100vh - 44px));
+  overflow: hidden;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.34);
+}
+
+.image-viewer-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.image-viewer-toolbar strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.image-viewer-actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 8px;
+}
+
+.image-viewer-actions button {
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--ink);
+  font-size: 23px;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.image-viewer-actions button:hover,
+.image-viewer-actions button:focus-visible {
+  border-color: rgba(47, 111, 99, 0.44);
+  background: #eef6f3;
+  outline: none;
+}
+
+.image-viewer-stage {
+  display: grid;
+  place-items: center;
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 22px;
+  background: #f7f9f9;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.image-viewer-stage.is-dragging {
+  cursor: grabbing;
+}
+
+.image-viewer-stage img {
+  width: min(100%, 1254px);
+  max-width: none;
+  height: auto;
+  background: #ffffff;
+  box-shadow: 0 14px 34px rgba(31, 41, 51, 0.12);
+  transform: translate(var(--viewer-pan-x, 0), var(--viewer-pan-y, 0)) scale(var(--viewer-zoom, 1));
+  transform-origin: center center;
 }
 
 .spec-table-wrap {

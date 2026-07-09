@@ -8,8 +8,9 @@
       name="description"
       content="钢排扣 / 束身衣扣适用于文胸、内衣、束身衣和塑身衣扣合部位，嘉鑫服装辅料有限公司支持颜色、排数、尺寸、底布和扣件要求来样沟通，适合内衣厂和辅料采购商批量采购。"
     >
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles.css?v=20260709-image-viewer-3">
     <link rel="icon" href="../assets/brand/logo.jpg">
+    <script src="../script.js?v=20260709-image-viewer-3" defer></script>
   </head>
   <body class="detail-page">
     <header class="site-header" aria-label="产品详情页导航">
@@ -45,8 +46,8 @@
           </div>
         </div>
         <figure class="detail-hero-media">
-          <img src="../assets/products/black-hooks.jpg" alt="黑色钢排扣产品全貌">
-          <figcaption>现有钢排扣产品图，后续可替换为更完整的多规格实拍。</figcaption>
+          <img class="product-image-contain" src="../assets/products/steel-hooks/steel-hooks-full-01.jpg" alt="钢排扣产品全貌">
+          <figcaption>钢排扣产品全貌图。</figcaption>
         </figure>
       </section>
 
@@ -56,35 +57,32 @@
             <div class="section-kicker">产品图片</div>
             <h2 id="gallery-title">钢排扣 / 束身衣扣图片展示</h2>
           </div>
-          <p>优先使用现有真实产品图片，缺少的图片位置先预留，方便后续补充实拍素材。</p>
+          <p>展示钢排扣全貌、扣件细节、多排数多尺寸、多颜色多尺寸、包装和应用场景图片。</p>
         </div>
 
         <div class="detail-gallery">
           <figure class="detail-image-card">
-            <img src="../assets/products/black-hooks.jpg" alt="钢排扣产品全貌图">
+            <img class="product-image-contain image-viewer-trigger" src="../assets/products/steel-hooks/steel-hooks-full-01.jpg" alt="钢排扣产品全貌图" tabindex="0" data-viewer-caption="产品全貌图">
             <figcaption>产品全貌图</figcaption>
           </figure>
           <figure class="detail-image-card">
-            <img src="../assets/products/white-hooks-detail.jpg" alt="束身衣扣扣件细节图">
+            <img class="product-image-contain image-viewer-trigger" src="../assets/products/steel-hooks/steel-hooks-detail-hook-01.jpg" alt="钢排扣扣件细节图" tabindex="0" data-viewer-caption="扣件细节图">
             <figcaption>扣件细节图</figcaption>
           </figure>
-          <!-- 待替换真实产品图 -->
-          <figure class="detail-image-card placeholder-card">
-            <div>待补充真实图片</div>
-            <figcaption>走线 / 底布细节图</figcaption>
+          <figure class="detail-image-card">
+            <img class="product-image-contain image-viewer-trigger" src="../assets/products/steel-hooks/steel-hooks-size-options-01.jpg" alt="钢排扣多排数多尺寸图" tabindex="0" data-viewer-caption="多排数 / 多尺寸图">
+            <figcaption>多排数 / 多尺寸图</figcaption>
           </figure>
           <figure class="detail-image-card">
-            <img src="../assets/products/black-hooks.jpg" alt="钢排扣多排数多颜色展示图">
-            <figcaption>多排数 / 多颜色展示图</figcaption>
+            <img class="product-image-contain image-viewer-trigger" src="../assets/products/steel-hooks/steel-hooks-color-size-options-01.jpg" alt="钢排扣多颜色多尺寸图" tabindex="0" data-viewer-caption="多颜色 / 多尺寸图">
+            <figcaption>多颜色 / 多尺寸图</figcaption>
           </figure>
-          <!-- 待替换真实产品图 -->
-          <figure class="detail-image-card placeholder-card">
-            <div>待补充真实图片</div>
+          <figure class="detail-image-card">
+            <img class="product-image-contain image-viewer-trigger" src="../assets/products/steel-hooks/steel-hooks-packaging-01.jpg" alt="钢排扣批量包装图" tabindex="0" data-viewer-caption="批量包装图">
             <figcaption>批量包装图</figcaption>
           </figure>
-          <!-- 待替换真实产品图 -->
-          <figure class="detail-image-card placeholder-card">
-            <div>待补充真实图片</div>
+          <figure class="detail-image-card">
+            <img class="product-image-contain image-viewer-trigger" src="../assets/products/steel-hooks/steel-hooks-application-01.jpg" alt="钢排扣应用场景图" tabindex="0" data-viewer-caption="应用场景图">
             <figcaption>应用场景图</figcaption>
           </figure>
         </div>
@@ -263,6 +261,21 @@
       <span>嘉鑫服装辅料有限公司</span>
       <span>钢排扣 / 束身衣扣 · 工厂直营 · 支持定制</span>
     </footer>
+
+    <div class="image-viewer" data-image-viewer hidden>
+      <div class="image-viewer-backdrop" data-viewer-close></div>
+      <div class="image-viewer-panel" role="dialog" aria-modal="true" aria-labelledby="image-viewer-title">
+        <div class="image-viewer-toolbar">
+          <strong id="image-viewer-title" data-viewer-title>产品图片</strong>
+          <div class="image-viewer-actions">
+            <button type="button" data-viewer-close aria-label="关闭预览">×</button>
+          </div>
+        </div>
+        <div class="image-viewer-stage">
+          <img src="" alt="" data-viewer-image>
+        </div>
+      </div>
+    </div>
 
     <aside class="floating-contact" aria-label="电脑端悬浮联系入口">
       <details class="floating-wechat">
