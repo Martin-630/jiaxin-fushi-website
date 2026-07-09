@@ -8,7 +8,7 @@
       name="description"
       content="嘉鑫服装辅料有限公司位于广东佛山南海盐步，主营文胸钢圈、钢排扣、包胶钢圈、胶骨、钢条、束身衣扣等女士内衣辅料配件，支持来样定制、打样开发和批量供货。"
     >
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260709-location-card">
     <link rel="icon" href="assets/brand/logo.jpg">
     <script type="application/ld+json">
       {
@@ -27,7 +27,7 @@
         "description": "嘉鑫服装辅料有限公司主营服装辅料、内衣辅料配件生产，支持来样定制、打样开发和批量供货。"
       }
     </script>
-    <script src="script.js" defer></script>
+    <script src="script.js?v=20260709-location-card" defer></script>
   </head>
   <body>
     <header class="site-header" aria-label="网站导航">
@@ -380,19 +380,36 @@
 
       <section class="section contact-section" id="contact" aria-labelledby="contact-title">
         <div class="contact-panel">
-          <div>
+          <div class="contact-location-column">
             <div class="section-kicker">联系位置</div>
             <h2 id="contact-title">欢迎来电咨询或到厂沟通</h2>
             <p>可通过高德地图搜索公司位置，或直接联系杨云琼沟通产品规格、定制需求与报价。</p>
+            <a
+              class="location-map-card"
+              href="https://uri.amap.com/search?keyword=%E5%B9%BF%E4%B8%9C%E7%9C%81%E4%BD%9B%E5%B1%B1%E5%B8%82%E5%8D%97%E6%B5%B7%E5%8C%BA%E7%9B%90%E6%AD%A5%E9%9D%92%E9%BE%99%E5%A4%A7%E9%81%93%E5%8D%971%E5%8F%B7%E4%B9%8B1%E5%8F%B7&city=%E4%BD%9B%E5%B1%B1&view=map&src=jiaxinfuzhuang&callnative=1"
+              data-amap-card
+              aria-label="打开高德地图查看嘉鑫服装辅料有限公司位置"
+            >
+              <span class="map-card-visual" aria-hidden="true">
+                <span class="map-road main"></span>
+                <span class="map-road cross"></span>
+                <span class="map-road small"></span>
+                <span class="map-area-label">盐步青龙大道南</span>
+                <span class="map-pin"></span>
+                <span class="map-pin-label">到厂位置</span>
+              </span>
+              <span class="map-card-body">
+                <strong>嘉鑫服装辅料有限公司</strong>
+                <span>广东省佛山市南海区盐步青龙大道南1号之1号</span>
+                <em>点击打开高德地图查看位置</em>
+              </span>
+            </a>
           </div>
           <div class="contact-route-card">
-            <div class="route-tabs" aria-label="联系导航">
-              <a href="tel:13425969730">电话咨询</a>
-              <a href="https://uri.amap.com/search?keyword=%E5%B9%BF%E4%B8%9C%E7%9C%81%E4%BD%9B%E5%B1%B1%E5%B8%82%E5%8D%97%E6%B5%B7%E5%8C%BA%E7%9B%90%E6%AD%A5%E9%9D%92%E9%BE%99%E5%A4%A7%E9%81%93%E5%8D%971%E5%8F%B7%E4%B9%8B1%E5%8F%B7" target="_blank" rel="noreferrer">高德导航</a>
-            </div>
             <address class="contact-list">
               <p><strong>公司名称</strong><span>嘉鑫服装辅料有限公司（嘉鑫辅料）</span></p>
-              <p><strong>联系人</strong><span>杨云琼</span></p>
+              <p><strong>联系人</strong><span>杨小姐</span></p>
+              <p><strong>邮箱</strong><a href="mailto:13425969730@163.com">13425969730@163.com</a></p>
               <p><strong>电话 / 微信</strong><a href="tel:13425969730">13425969730</a></p>
               <p><strong>公司地址</strong><span>广东省佛山市南海区盐步青龙大道南1号之1号</span></p>
             </address>
@@ -409,17 +426,22 @@
             <div class="contact-actions">
               <a class="button primary" href="tel:13425969730">立即拨打电话</a>
               <a class="button map" href="#wechat-consult">微信咨询</a>
-              <a
-                class="button map"
-                href="https://uri.amap.com/search?keyword=%E5%B9%BF%E4%B8%9C%E7%9C%81%E4%BD%9B%E5%B1%B1%E5%B8%82%E5%8D%97%E6%B5%B7%E5%8C%BA%E7%9B%90%E6%AD%A5%E9%9D%92%E9%BE%99%E5%A4%A7%E9%81%93%E5%8D%971%E5%8F%B7%E4%B9%8B1%E5%8F%B7"
-                target="_blank"
-                rel="noreferrer"
-              >打开高德地图</a>
             </div>
           </div>
         </div>
       </section>
     </main>
+
+    <div class="map-confirm-dialog" data-amap-dialog hidden role="dialog" aria-modal="true" aria-labelledby="amap-dialog-title">
+      <div class="map-confirm-panel">
+        <h2 id="amap-dialog-title">是否打开高德地图？</h2>
+        <p>将跳转到高德地图，并以嘉鑫服装辅料有限公司地址作为查看位置。</p>
+        <div class="map-confirm-actions">
+          <button class="button primary" type="button" data-amap-confirm-yes>继续打开</button>
+          <button class="button map" type="button" data-amap-confirm-no>留在网站</button>
+        </div>
+      </div>
+    </div>
 
     <footer class="site-footer">
       <span>嘉鑫服装辅料有限公司</span>

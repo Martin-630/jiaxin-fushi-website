@@ -81,6 +81,34 @@ a {
   color: #000000;
 }
 
+@media (min-width: 901px) {
+  .site-header {
+    gap: 34px;
+    min-height: 86px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .brand {
+    gap: 14px;
+    font-size: 18px;
+  }
+
+  .brand img {
+    width: 52px;
+    height: 52px;
+  }
+
+  .nav-links {
+    gap: 14px;
+    font-size: 16px;
+  }
+
+  .nav-links a {
+    padding: 10px 12px;
+  }
+}
+
 .hero {
   position: relative;
   min-height: calc(100vh - 108px);
@@ -784,13 +812,169 @@ a {
 
 .contact-panel {
   grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1fr);
-  align-items: start;
+  align-items: stretch;
   padding: 36px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background:
     linear-gradient(135deg, rgba(184, 137, 47, 0.09), rgba(35, 108, 120, 0.08)),
     #ffffff;
+}
+
+.contact-location-column {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.location-map-card {
+  display: grid;
+  grid-template-rows: minmax(280px, 1fr) auto;
+  flex: 1;
+  gap: 18px;
+  margin-top: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(47, 111, 99, 0.22);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 18px 46px rgba(31, 41, 51, 0.08);
+}
+
+.location-map-card:hover {
+  border-color: rgba(47, 111, 99, 0.42);
+  box-shadow: 0 20px 52px rgba(31, 41, 51, 0.12);
+}
+
+.map-card-visual {
+  position: relative;
+  display: block;
+  min-height: 280px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 52% 48%, rgba(184, 137, 47, 0.12) 0 72px, transparent 73px),
+    radial-gradient(circle at 52% 48%, rgba(47, 111, 99, 0.1) 0 128px, transparent 129px),
+    linear-gradient(90deg, rgba(47, 111, 99, 0.12) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(47, 111, 99, 0.12) 1px, transparent 1px),
+    #f4f7f4;
+  background-size: 42px 42px;
+}
+
+.map-road {
+  position: absolute;
+  display: block;
+  border-radius: 999px;
+  background: rgba(184, 137, 47, 0.24);
+}
+
+.map-road.main {
+  top: 106px;
+  left: -36px;
+  width: 116%;
+  height: 20px;
+  transform: rotate(-10deg);
+}
+
+.map-road.cross {
+  top: -16px;
+  left: 43%;
+  width: 18px;
+  height: 340px;
+  background: rgba(47, 111, 99, 0.18);
+  transform: rotate(18deg);
+}
+
+.map-road.small {
+  right: -22px;
+  bottom: 54px;
+  width: 62%;
+  height: 14px;
+  background: rgba(31, 41, 51, 0.1);
+  transform: rotate(14deg);
+}
+
+.map-area-label {
+  position: absolute;
+  top: 28px;
+  left: 24px;
+  padding: 7px 10px;
+  border: 1px solid rgba(47, 111, 99, 0.18);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.map-pin {
+  position: absolute;
+  top: 104px;
+  left: 50%;
+  z-index: 2;
+  width: 48px;
+  height: 48px;
+  border: 5px solid #ffffff;
+  border-radius: 50% 50% 50% 0;
+  background: var(--gold);
+  box-shadow: 0 12px 26px rgba(31, 41, 51, 0.22);
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.map-pin::before {
+  position: absolute;
+  inset: -20px;
+  border: 2px solid rgba(184, 137, 47, 0.28);
+  border-radius: 50%;
+  content: "";
+}
+
+.map-pin::after {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ffffff;
+  content: "";
+}
+
+.map-pin-label {
+  position: absolute;
+  top: 172px;
+  left: 50%;
+  z-index: 2;
+  padding: 8px 12px;
+  border: 1px solid rgba(184, 137, 47, 0.26);
+  border-radius: 6px;
+  background: #ffffff;
+  box-shadow: 0 12px 26px rgba(31, 41, 51, 0.12);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 800;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.map-card-body {
+  display: grid;
+  gap: 6px;
+  padding: 0 18px 18px;
+}
+
+.map-card-body strong {
+  font-size: 18px;
+}
+
+.map-card-body span {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.map-card-body em {
+  color: var(--teal);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 800;
 }
 
 .contact-route-card {
@@ -907,6 +1091,46 @@ a {
   margin: 0;
   padding: 16px;
   background: #ffffff;
+}
+
+.map-confirm-dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  padding: 24px;
+  background: rgba(31, 41, 51, 0.42);
+  place-items: center;
+}
+
+.map-confirm-dialog[hidden] {
+  display: none;
+}
+
+.map-confirm-panel {
+  width: min(420px, 100%);
+  padding: 24px;
+  border: 1px solid rgba(32, 32, 34, 0.12);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 24px 70px rgba(31, 41, 51, 0.22);
+}
+
+.map-confirm-panel h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.map-confirm-panel p {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.map-confirm-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 22px;
 }
 
 .site-footer {
