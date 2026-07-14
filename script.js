@@ -44,6 +44,111 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+let wechatQrPressTimer = null;
+let activeWechatQrTrigger = null;
+let wechatQrDialog = null;
+let lastWechatQrPointerType = "";
+
+function getWechatQrSource(trigger) {
+  if (trigger instanceof HTMLImageElement) {
+    return trigger.currentSrc || trigger.src;
+  }
+
+  if (trigger instanceof HTMLObjectElement) {
+    return trigger.data;
+  }
+
+  return trigger.getAttribute("src") || trigger.getAttribute("data") || "";
+}
+
+function ensureWechatQrDialog() {
+  if (wechatQrDialog) return wechatQrDialog;
+
+  wechatQrDialog = document.createElement("div");
+  wechatQrDialog.className = "wechat-save-dialog";
+  wechatQrDialog.hidden = true;
+  wechatQrDialog.setAttribute("role", "dialog");
+  wechatQrDialog.setAttribute("aria-modal", "true");
+  wechatQrDialog.setAttribute("aria-labelledby", "wechat-save-title");
+  wechatQrDialog.innerHTML = `
+    <button class="wechat-save-backdrop" type="button" aria-label="关闭二维码保存提示" data-wechat-save-close></button>
+    <div class="wechat-save-panel">
+      <button class="wechat-save-close" type="button" aria-label="关闭二维码保存提示" data-wechat-save-close>×</button>
+      <h2 id="wechat-save-title">保存微信二维码</h2>
+      <p>长按下方二维码图片，可保存到手机相册后添加微信咨询。</p>
+      <img class="wechat-save-image" alt="微信二维码">
+    </div>
+  `;
+  document.body.append(wechatQrDialog);
+
+  wechatQrDialog.querySelectorAll("[data-wechat-save-close]").forEach((button) => {
+    button.addEventListener("click", closeWechatQrDialog);
+  });
+
+  return wechatQrDialog;
+}
+
+function closeWechatQrDialog() {
+  if (!wechatQrDialog) return;
+
+  wechatQrDialog.hidden = true;
+  document.body.classList.remove("has-wechat-save-dialog");
+  activeWechatQrTrigger?.focus?.();
+}
+
+function openWechatQrDialog(trigger) {
+  const qrSource = getWechatQrSource(trigger);
+  if (!qrSource) return;
+
+  activeWechatQrTrigger = trigger;
+  const dialog = ensureWechatQrDialog();
+  const image = dialog.querySelector(".wechat-save-image");
+  image.src = qrSource;
+  image.alt = trigger.getAttribute("aria-label") || trigger.getAttribute("alt") || "微信二维码";
+  document.body.classList.add("has-wechat-save-dialog");
+  dialog.hidden = false;
+  dialog.querySelector("[data-wechat-save-close]")?.focus();
+}
+
+function clearWechatQrPressTimer() {
+  if (!wechatQrPressTimer) return;
+
+  window.clearTimeout(wechatQrPressTimer);
+  wechatQrPressTimer = null;
+}
+
+document.addEventListener("pointerdown", (event) => {
+  const trigger = event.target instanceof Element ? event.target.closest(".wechat-qr-image") : null;
+  if (!trigger) return;
+
+  lastWechatQrPointerType = event.pointerType;
+  if (event.pointerType === "mouse") return;
+
+  clearWechatQrPressTimer();
+  wechatQrPressTimer = window.setTimeout(() => {
+    openWechatQrDialog(trigger);
+    wechatQrPressTimer = null;
+  }, 560);
+});
+
+document.addEventListener("pointerup", clearWechatQrPressTimer);
+document.addEventListener("pointercancel", clearWechatQrPressTimer);
+document.addEventListener("contextmenu", (event) => {
+  const trigger = event.target instanceof Element ? event.target.closest(".wechat-qr-image") : null;
+  if (!trigger) return;
+  if (lastWechatQrPointerType === "mouse") return;
+
+  event.preventDefault();
+  clearWechatQrPressTimer();
+  openWechatQrDialog(trigger);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && wechatQrDialog && !wechatQrDialog.hidden) {
+    closeWechatQrDialog();
+  }
+});
+
 const imageViewer = document.querySelector("[data-image-viewer]");
 const imageViewerImage = document.querySelector("[data-viewer-image]");
 const imageViewerTitle = document.querySelector("[data-viewer-title]");

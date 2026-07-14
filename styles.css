@@ -1174,6 +1174,91 @@ a {
   height: 180px;
 }
 
+body.has-wechat-save-dialog {
+  overflow: hidden;
+}
+
+.wechat-save-dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+}
+
+.wechat-save-dialog[hidden] {
+  display: none;
+}
+
+.wechat-save-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(16, 18, 20, 0.74);
+  cursor: pointer;
+}
+
+.wechat-save-panel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  width: min(420px, 100%);
+  padding: 22px;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.32);
+  text-align: center;
+}
+
+.wechat-save-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--ink);
+  font-size: 23px;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.wechat-save-close:hover,
+.wechat-save-close:focus-visible {
+  border-color: rgba(47, 111, 99, 0.44);
+  background: #eef6f3;
+  outline: none;
+}
+
+.wechat-save-panel h2 {
+  margin: 0;
+  padding-right: 34px;
+  color: var(--ink);
+  font-size: 22px;
+}
+
+.wechat-save-panel p {
+  margin: 10px 0 16px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.wechat-save-image {
+  width: min(300px, 100%);
+  aspect-ratio: 1 / 1;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  object-fit: contain;
+  -webkit-touch-callout: default;
+  user-select: auto;
+}
+
 .contact-list {
   display: grid;
   gap: 1px;
