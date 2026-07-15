@@ -1830,14 +1830,10 @@ body.has-wechat-save-dialog {
 
   .hero-copy {
     margin: auto 0 0;
-    padding: 12px 14px;
-    border-left: 3px solid rgba(241, 195, 107, 0.9);
-    border-radius: 6px;
-    background: rgba(8, 20, 18, 0.62);
-    color: #e7f3ee;
+    color: rgba(255, 255, 255, 0.92);
     font-size: 13px;
     line-height: 1.62;
-    backdrop-filter: blur(3px);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
   }
 
   .hero-tags {
