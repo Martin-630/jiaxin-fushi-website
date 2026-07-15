@@ -1743,7 +1743,24 @@ body.has-wechat-save-dialog {
   }
 
   .hero {
-    min-height: 620px;
+    display: block;
+    min-height: auto;
+    background: #181c1f;
+  }
+
+  .hero-bg {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 836 / 466;
+    object-fit: contain;
+    object-position: center;
+    filter: saturate(0.96) contrast(1.02);
+  }
+
+  .hero-overlay {
+    display: none;
   }
 
   .hero-content,
@@ -1757,7 +1774,9 @@ body.has-wechat-save-dialog {
   }
 
   .hero-content {
-    padding-bottom: 56px;
+    width: 100%;
+    margin: 0;
+    padding: 30px 18px 56px;
   }
 
   .hero h1,
