@@ -1760,7 +1760,14 @@ body.has-wechat-save-dialog {
   }
 
   .hero-overlay {
-    display: none;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: 0;
+    display: block;
+    height: calc(100vw * 466 / 836);
+    background: linear-gradient(0deg, rgba(12, 16, 17, 0.82), rgba(12, 16, 17, 0.2) 58%, transparent 82%);
+    pointer-events: none;
   }
 
   .hero-content,
@@ -1776,15 +1783,39 @@ body.has-wechat-save-dialog {
   .hero-content {
     width: 100%;
     margin: 0;
-    padding: 30px 18px 56px;
+    padding: 28px 18px 56px;
   }
 
-  .hero h1,
+  .hero-content > .eyebrow {
+    position: absolute;
+    top: -108px;
+    right: 18px;
+    left: 18px;
+    z-index: 1;
+    margin: 0;
+    font-size: 12px;
+  }
+
+  .hero h1 {
+    position: absolute;
+    top: -78px;
+    right: 18px;
+    left: 18px;
+    z-index: 1;
+    max-width: none;
+    font-size: 25px;
+    line-height: 1.22;
+  }
+
   .detail-hero h1 {
     font-size: 31px;
   }
 
-  .hero-copy,
+  .hero-copy {
+    margin-top: 0;
+    font-size: 15px;
+  }
+
   .section p {
     font-size: 16px;
   }
