@@ -199,12 +199,31 @@ function closeImageViewer() {
   activeViewerTrigger?.focus();
 }
 
+function getImageViewerSource(trigger) {
+  if (trigger instanceof HTMLImageElement) {
+    return trigger.currentSrc || trigger.src;
+  }
+
+  return trigger.dataset.viewerSrc || "";
+}
+
+function getImageViewerAlt(trigger) {
+  if (trigger instanceof HTMLImageElement) {
+    return trigger.alt;
+  }
+
+  return trigger.dataset.viewerAlt || trigger.getAttribute("aria-label") || "工厂图片";
+}
+
 function openImageViewer(trigger) {
   if (!imageViewer || !imageViewerImage || !imageViewerTitle) return;
 
+  const viewerSource = getImageViewerSource(trigger);
+  if (!viewerSource) return;
+
   activeViewerTrigger = trigger;
-  imageViewerImage.src = trigger.currentSrc || trigger.src;
-  imageViewerImage.alt = trigger.alt;
+  imageViewerImage.src = viewerSource;
+  imageViewerImage.alt = getImageViewerAlt(trigger);
   imageViewerTitle.textContent = trigger.dataset.viewerCaption || trigger.alt || "产品图片";
   setImageViewerZoom(1);
   setImageViewerPan(0, 0);
