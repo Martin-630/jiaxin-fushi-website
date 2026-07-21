@@ -85,6 +85,71 @@ a {
   color: #000000;
 }
 
+.language-switcher {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.language-switcher summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid rgba(47, 111, 99, 0.28);
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--teal);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 800;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.language-switcher summary::-webkit-details-marker {
+  display: none;
+}
+
+.language-switcher summary::after {
+  content: "⌄";
+  font-size: 12px;
+}
+
+.language-switcher[open] summary {
+  border-color: var(--teal);
+}
+
+.language-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 30;
+  display: grid;
+  min-width: 140px;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 14px 34px rgba(31, 41, 51, 0.14);
+}
+
+.language-menu a {
+  padding: 8px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.language-menu a:hover,
+.language-menu a.is-active {
+  background: #eef6f3;
+  color: var(--teal);
+}
+
+.english-site {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 @media (min-width: 901px) {
   .site-header {
     gap: 34px;
@@ -382,6 +447,13 @@ a {
   display: block;
   margin-top: 14px;
   color: var(--teal);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.product-card-moq {
+  margin: 14px 0 10px;
+  color: #7b5b20;
   font-size: 14px;
   font-weight: 800;
 }
@@ -1692,12 +1764,25 @@ body.has-wechat-save-dialog {
 
 @media (max-width: 900px) {
   .site-header {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 10px 16px;
+  }
+
+  .site-header .brand {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .language-switcher {
+    grid-column: 2;
+    grid-row: 1;
   }
 
   .nav-links {
+    grid-column: 1 / -1;
+    grid-row: 2;
     width: 100%;
     overflow-x: auto;
     padding-bottom: 4px;
@@ -1949,6 +2034,12 @@ body.has-wechat-save-dialog {
 
   .nav-links {
     font-size: 14px;
+  }
+
+  .language-switcher summary {
+    min-height: 36px;
+    padding: 6px 10px;
+    font-size: 13px;
   }
 
   .hero {
