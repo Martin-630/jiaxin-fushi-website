@@ -448,7 +448,7 @@ function stripLanguageSwitcher(html) {
 }
 
 function bilingualHead(canonical, chinese, english, indent = "    ") {
-  return `${indent}<link rel="canonical" href="${canonical}" data-bilingual>\n${indent}<link rel="alternate" hreflang="zh-CN" href="${chinese}" data-bilingual>\n${indent}<link rel="alternate" hreflang="en" href="${english}" data-bilingual>\n${indent}<link rel="alternate" hreflang="x-default" href="${chinese}" data-bilingual>\n`;
+  return `${indent}<link rel="canonical" href="${canonical}" data-bilingual>\n${indent}<link rel="alternate" hreflang="zh-CN" href="${chinese}" data-bilingual>\n${indent}<link rel="alternate" hreflang="en" href="${english}" data-bilingual>\n${indent}<link rel="alternate" hreflang="x-default" href="${english}" data-bilingual>\n`;
 }
 
 function languageSwitcher(chineseHref, englishHref, activeLanguage) {
@@ -662,15 +662,19 @@ for (const product of products) {
   writeFile(path.join(englishProductRoot, `${product.slug}.html`), englishProductPage(product, chineseSource));
 }
 
-const sitemapUrls = [
-  "https://jiaxinfuzhuang.com/",
-  ...products.map((product) => `https://jiaxinfuzhuang.com/products/${product.slug}.html`),
-  "https://jiaxinfuzhuang.com/en/",
-  ...products.map((product) => `https://jiaxinfuzhuang.com/en/products/${product.slug}.html`),
+const sitemapPages = [
+  {
+    chinese: "https://jiaxinfuzhuang.com/",
+    english: "https://jiaxinfuzhuang.com/en/",
+  },
+  ...products.map((product) => ({
+    chinese: `https://jiaxinfuzhuang.com/products/${product.slug}.html`,
+    english: `https://jiaxinfuzhuang.com/en/products/${product.slug}.html`,
+  })),
 ];
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${sitemapUrls.map((url) => `  <url>\n    <loc>${url}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${url.endsWith("/") ? "weekly" : "monthly"}</changefreq>\n    <priority>${url.endsWith("/") ? "1.0" : "0.8"}</priority>\n  </url>`).join("\n")}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+${sitemapPages.flatMap(({ chinese, english }) => [english, chinese].map((url) => `  <url>\n    <loc>${url}</loc>\n    <xhtml:link rel="alternate" hreflang="en" href="${english}" />\n    <xhtml:link rel="alternate" hreflang="zh-CN" href="${chinese}" />\n    <xhtml:link rel="alternate" hreflang="x-default" href="${english}" />\n    <lastmod>${today}</lastmod>\n    <changefreq>${url.endsWith("/") ? "weekly" : "monthly"}</changefreq>\n    <priority>${url.endsWith("/") ? "1.0" : "0.8"}</priority>\n  </url>`)).join("\n")}
 </urlset>
 `;
 writeFile(path.join(siteRoot, "sitemap.xml"), sitemap);

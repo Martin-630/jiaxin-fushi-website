@@ -1,121 +1,181 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://jiaxinfuzhuang.com/</loc>
+    <loc>https://jiaxinfuzhuang.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jiaxinfuzhuang.com/en/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://jiaxinfuzhuang.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jiaxinfuzhuang.com/en/" />
     <lastmod>2026-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://jiaxinfuzhuang.com/products/steel-hooks.html</loc>
-    <lastmod>2026-07-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jiaxinfuzhuang.com/products/bra-underwire.html</loc>
-    <lastmod>2026-07-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jiaxinfuzhuang.com/products/stainless-underwire.html</loc>
-    <lastmod>2026-07-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jiaxinfuzhuang.com/products/coated-underwire.html</loc>
-    <lastmod>2026-07-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jiaxinfuzhuang.com/products/boning.html</loc>
-    <lastmod>2026-07-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jiaxinfuzhuang.com/products/steel-strip.html</loc>
-    <lastmod>2026-07-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jiaxinfuzhuang.com/products/u-v-shaped-underwire.html</loc>
-    <lastmod>2026-07-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jiaxinfuzhuang.com/products/w-shaped-underwire.html</loc>
-    <lastmod>2026-07-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jiaxinfuzhuang.com/products/eyelet.html</loc>
-    <lastmod>2026-07-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://jiaxinfuzhuang.com/en/</loc>
+    <loc>https://jiaxinfuzhuang.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jiaxinfuzhuang.com/en/" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://jiaxinfuzhuang.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jiaxinfuzhuang.com/en/" />
     <lastmod>2026-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://jiaxinfuzhuang.com/en/products/steel-hooks.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jiaxinfuzhuang.com/en/products/steel-hooks.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://jiaxinfuzhuang.com/products/steel-hooks.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jiaxinfuzhuang.com/en/products/steel-hooks.html" />
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jiaxinfuzhuang.com/products/steel-hooks.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jiaxinfuzhuang.com/en/products/steel-hooks.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://jiaxinfuzhuang.com/products/steel-hooks.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jiaxinfuzhuang.com/en/products/steel-hooks.html" />
     <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jiaxinfuzhuang.com/en/products/bra-underwire.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jiaxinfuzhuang.com/en/products/bra-underwire.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://jiaxinfuzhuang.com/products/bra-underwire.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jiaxinfuzhuang.com/en/products/bra-underwire.html" />
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jiaxinfuzhuang.com/products/bra-underwire.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jiaxinfuzhuang.com/en/products/bra-underwire.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://jiaxinfuzhuang.com/products/bra-underwire.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jiaxinfuzhuang.com/en/products/bra-underwire.html" />
     <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jiaxinfuzhuang.com/en/products/stainless-underwire.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jiaxinfuzhuang.com/en/products/stainless-underwire.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://jiaxinfuzhuang.com/products/stainless-underwire.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jiaxinfuzhuang.com/en/products/stainless-underwire.html" />
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jiaxinfuzhuang.com/products/stainless-underwire.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jiaxinfuzhuang.com/en/products/stainless-underwire.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://jiaxinfuzhuang.com/products/stainless-underwire.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jiaxinfuzhuang.com/en/products/stainless-underwire.html" />
     <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jiaxinfuzhuang.com/en/products/coated-underwire.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jiaxinfuzhuang.com/en/products/coated-underwire.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://jiaxinfuzhuang.com/products/coated-underwire.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jiaxinfuzhuang.com/en/products/coated-underwire.html" />
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jiaxinfuzhuang.com/products/coated-underwire.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jiaxinfuzhuang.com/en/products/coated-underwire.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://jiaxinfuzhuang.com/products/coated-underwire.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jiaxinfuzhuang.com/en/products/coated-underwire.html" />
     <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jiaxinfuzhuang.com/en/products/boning.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jiaxinfuzhuang.com/en/products/boning.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://jiaxinfuzhuang.com/products/boning.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jiaxinfuzhuang.com/en/products/boning.html" />
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jiaxinfuzhuang.com/products/boning.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jiaxinfuzhuang.com/en/products/boning.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://jiaxinfuzhuang.com/products/boning.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jiaxinfuzhuang.com/en/products/boning.html" />
     <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jiaxinfuzhuang.com/en/products/steel-strip.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jiaxinfuzhuang.com/en/products/steel-strip.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://jiaxinfuzhuang.com/products/steel-strip.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jiaxinfuzhuang.com/en/products/steel-strip.html" />
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jiaxinfuzhuang.com/products/steel-strip.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jiaxinfuzhuang.com/en/products/steel-strip.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://jiaxinfuzhuang.com/products/steel-strip.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jiaxinfuzhuang.com/en/products/steel-strip.html" />
     <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jiaxinfuzhuang.com/en/products/u-v-shaped-underwire.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jiaxinfuzhuang.com/en/products/u-v-shaped-underwire.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://jiaxinfuzhuang.com/products/u-v-shaped-underwire.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jiaxinfuzhuang.com/en/products/u-v-shaped-underwire.html" />
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jiaxinfuzhuang.com/products/u-v-shaped-underwire.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jiaxinfuzhuang.com/en/products/u-v-shaped-underwire.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://jiaxinfuzhuang.com/products/u-v-shaped-underwire.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jiaxinfuzhuang.com/en/products/u-v-shaped-underwire.html" />
     <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jiaxinfuzhuang.com/en/products/w-shaped-underwire.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jiaxinfuzhuang.com/en/products/w-shaped-underwire.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://jiaxinfuzhuang.com/products/w-shaped-underwire.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jiaxinfuzhuang.com/en/products/w-shaped-underwire.html" />
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jiaxinfuzhuang.com/products/w-shaped-underwire.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jiaxinfuzhuang.com/en/products/w-shaped-underwire.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://jiaxinfuzhuang.com/products/w-shaped-underwire.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jiaxinfuzhuang.com/en/products/w-shaped-underwire.html" />
     <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jiaxinfuzhuang.com/en/products/eyelet.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jiaxinfuzhuang.com/en/products/eyelet.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://jiaxinfuzhuang.com/products/eyelet.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jiaxinfuzhuang.com/en/products/eyelet.html" />
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jiaxinfuzhuang.com/products/eyelet.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jiaxinfuzhuang.com/en/products/eyelet.html" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://jiaxinfuzhuang.com/products/eyelet.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jiaxinfuzhuang.com/en/products/eyelet.html" />
     <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
