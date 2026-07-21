@@ -7,6 +7,7 @@ const productRoot = path.join(siteRoot, "products");
 const englishRoot = path.join(siteRoot, "en");
 const englishProductRoot = path.join(englishRoot, "products");
 const today = "2026-07-21";
+const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("嘉鑫服装辅料有限公司 广东省佛山市南海区盐步青龙大道南1号之1号")}`;
 
 const products = [
   {
@@ -357,8 +358,8 @@ const homeTranslations = [
   ["还有其他规格需求？欢迎电话 / 微信咨询。", "Have another specification? Contact us by phone or WeChat."],
   ["欢迎来电咨询或到厂沟通", "Contact Us or Arrange a Factory Visit"],
   ["联系位置", "CONTACT"],
-  ["可通过高德地图搜索公司位置，或直接联系杨云琼沟通产品规格、定制需求与报价。", "Use Amap to view the factory location or contact our team to discuss specifications, customization, and pricing."],
-  ["点击打开高德地图查看位置", "Open Amap to view the location"],
+  ["可通过高德地图搜索公司位置，或直接联系杨云琼沟通产品规格、定制需求与报价。", "Use Google Maps to view the factory location or contact our team to discuss specifications, customization, and pricing."],
+  ["点击打开高德地图查看位置", "Open Google Maps to view the location"],
   ["公司名称", "Company"],
   ["联系人", "Contact"],
   ["杨小姐", "Ms. Yang"],
@@ -367,15 +368,15 @@ const homeTranslations = [
   ["公司地址", "Address"],
   ["扫码添加微信，可发送样品图、规格、颜色、数量，协助确认产品与报价。", "Scan to add WeChat and send sample images, specifications, colors, and quantities for review."],
   ["立即拨打电话", "Call Now"],
-  ["是否打开高德地图？", "Open Amap?"],
-  ["将跳转到高德地图，并以嘉鑫服装辅料有限公司地址作为查看位置。", "You will leave this website and open the Jiaxin factory location in Amap."],
-  ["继续打开", "Open Amap"],
+  ["是否打开高德地图？", "Open Google Maps?"],
+  ["将跳转到高德地图，并以嘉鑫服装辅料有限公司地址作为查看位置。", "You will leave this website and open the Jiaxin factory location in Google Maps."],
+  ["继续打开", "Open Google Maps"],
   ["留在网站", "Stay on Website"],
   ["内衣配件辅料 · 工厂直营 · 支持定制", "Lingerie Components · Direct Manufacturer · Custom Options"],
   ["电脑端滚轮缩放 · 手机端双指缩放 · 拖动查看", "Mouse-wheel zoom · Pinch to zoom · Drag to pan"],
   ["工厂图片", "Factory Image"],
   ["扫码或复制微信号发送样品图", "Scan or add the number on WeChat to send sample images"],
-  ["高德导航", "Amap"],
+  ["高德导航", "Google Maps"],
   ["到厂沟通", "Factory Visit"],
   ["微信同号", "Same Number"],
   ["嘉鑫服装辅料有限公司（嘉鑫辅料）", "Jiaxin Garment Accessories Co., Ltd."],
@@ -408,7 +409,7 @@ const homeTranslations = [
   ["查看多工位生产协作大图", "View multi-station production image"],
   ["盐步青龙大道南", "South Qinglong Avenue, Yanbu"],
   ["到厂位置", "Factory Location"],
-  ["打开高德地图查看嘉鑫服装辅料有限公司位置", "Open Jiaxin factory location in Amap"],
+  ["打开高德地图查看嘉鑫服装辅料有限公司位置", "Open Jiaxin factory location in Google Maps"],
   ["电话 / 微信咨询", "Call / WeChat"],
   ["产品全貌", " product overview"],
   ["嘉鑫辅料", "Jiaxin Accessories"],
@@ -504,7 +505,6 @@ function englishProductPage(product, source) {
   const heroSrc = hero.src.replace("../assets/", "../../assets/");
   const featureMarkup = product.features.map(([title, text], index) => `<article class="advantage-card"><span>${String(index + 1).padStart(2, "0")}</span><h3>${title}</h3><p>${text}</p></article>`).join("");
   const faqMarkup = product.faq.map(([question, answer]) => `<article class="faq-card"><h3>${question}</h3><p>${answer}</p></article>`).join("");
-  const mapUrl = "https://uri.amap.com/search?keyword=%E5%B9%BF%E4%B8%9C%E7%9C%81%E4%BD%9B%E5%B1%B1%E5%B8%82%E5%8D%97%E6%B5%B7%E5%8C%BA%E7%9B%90%E6%AD%A5%E9%9D%92%E9%BE%99%E5%A4%A7%E9%81%93%E5%8D%971%E5%8F%B7%E4%B9%8B1%E5%8F%B7";
   const englishUrl = `https://jiaxinfuzhuang.com/en/products/${product.slug}.html`;
   const chineseUrl = `https://jiaxinfuzhuang.com/products/${product.slug}.html`;
   return `<!doctype html>
@@ -569,11 +569,11 @@ ${bilingualHead(englishUrl, chineseUrl, englishUrl)}    <link rel="stylesheet" h
         <div class="faq-grid">${faqMarkup}</div>
       </section>
       <section class="section contact-section detail-contact-section" id="detail-contact" aria-labelledby="detail-contact-title">
-        <div class="contact-panel"><div><div class="section-kicker">CONTACT</div><h2 id="detail-contact-title">Ask About ${product.shortName}</h2><p>Send sample images, specifications, dimensions, colors, and quantities by phone or WeChat for review.</p></div><div class="contact-route-card"><div class="route-tabs"><a href="tel:+8613425969730">Call Us</a><a href="${mapUrl}" target="_blank" rel="noreferrer">Amap</a></div><address class="contact-list"><p><strong>Phone / WeChat</strong><a href="tel:+8613425969730">+86 13425969730</a></p><p><strong>Email</strong><a href="mailto:13425969730@163.com">13425969730@163.com</a></p><p><strong>Address</strong><span>No. 1-1, South Qinglong Avenue, Yanbu, Nanhai District, Foshan, Guangdong, China</span></p></address><div class="wechat-card" id="detail-wechat-consult"><div><h3>WeChat</h3><p>Scan the QR code and send sample images, specifications, colors, and quantities.</p><strong>Phone / WeChat: +86 13425969730</strong></div><img class="wechat-qr-image" src="../../assets/contact/微信二维码.jpg" alt="Jiaxin WeChat QR code" loading="lazy" decoding="async"></div><div class="contact-actions"><a class="button primary" href="tel:+8613425969730">Call Us</a><a class="button map" href="#detail-wechat-consult">WeChat</a><a class="button map" href="${mapUrl}" target="_blank" rel="noreferrer">Amap</a></div></div></div>
+        <div class="contact-panel"><div><div class="section-kicker">CONTACT</div><h2 id="detail-contact-title">Ask About ${product.shortName}</h2><p>Send sample images, specifications, dimensions, colors, and quantities by phone or WeChat for review.</p></div><div class="contact-route-card"><div class="route-tabs"><a href="tel:+8613425969730">Call Us</a><a href="${googleMapsUrl}" target="_blank" rel="noreferrer">Google Maps</a></div><address class="contact-list"><p><strong>Phone / WeChat</strong><a href="tel:+8613425969730">+86 13425969730</a></p><p><strong>Email</strong><a href="mailto:13425969730@163.com">13425969730@163.com</a></p><p><strong>Address</strong><span>No. 1-1, South Qinglong Avenue, Yanbu, Nanhai District, Foshan, Guangdong, China</span></p></address><div class="wechat-card" id="detail-wechat-consult"><div><h3>WeChat</h3><p>Scan the QR code and send sample images, specifications, colors, and quantities.</p><strong>Phone / WeChat: +86 13425969730</strong></div><img class="wechat-qr-image" src="../../assets/contact/微信二维码.jpg" alt="Jiaxin WeChat QR code" loading="lazy" decoding="async"></div><div class="contact-actions"><a class="button primary" href="tel:+8613425969730">Call Us</a><a class="button map" href="#detail-wechat-consult">WeChat</a><a class="button map" href="${googleMapsUrl}" target="_blank" rel="noreferrer">Google Maps</a></div></div></div>
       </section>
     </main>
     <footer class="site-footer"><span>Jiaxin Garment Accessories Co., Ltd.</span><span>${product.shortName} · Direct Manufacturer · Custom Options</span></footer>
-    <aside class="floating-contact"><details class="floating-wechat"><summary>WeChat</summary><div class="floating-qr-card"><img class="wechat-qr-image small" src="../../assets/contact/微信二维码.jpg" alt="Jiaxin WeChat QR code" loading="lazy" decoding="async"><strong>Phone / WeChat: +86 13425969730</strong><span>Scan or add the number on WeChat to send sample images</span></div></details><a href="tel:+8613425969730">Call Us</a><a href="${mapUrl}" target="_blank" rel="noreferrer">Amap</a></aside>
+    <aside class="floating-contact"><details class="floating-wechat"><summary>WeChat</summary><div class="floating-qr-card"><img class="wechat-qr-image small" src="../../assets/contact/微信二维码.jpg" alt="Jiaxin WeChat QR code" loading="lazy" decoding="async"><strong>Phone / WeChat: +86 13425969730</strong><span>Scan or add the number on WeChat to send sample images</span></div></details><a href="tel:+8613425969730">Call Us</a><a href="${googleMapsUrl}" target="_blank" rel="noreferrer">Google Maps</a></aside>
     <nav class="mobile-contact-bar" aria-label="Mobile contact"><a href="tel:+8613425969730"><strong>Call</strong><span>+86 13425969730</span></a><a href="#detail-wechat-consult"><strong>WeChat</strong><span>Same Number</span></a><a href="mailto:13425969730@163.com"><strong>Email</strong><span>Send Inquiry</span></a></nav>
     <div class="image-viewer" data-image-viewer hidden role="dialog" aria-modal="true" aria-labelledby="viewer-title"><button class="image-viewer-backdrop" type="button" aria-label="Close image viewer" data-viewer-close></button><div class="image-viewer-panel"><div class="image-viewer-toolbar"><div class="image-viewer-heading"><strong id="viewer-title" data-viewer-title>Product Image</strong><span>Mouse-wheel zoom · Pinch to zoom · Drag to pan</span></div><div class="image-viewer-actions"><button type="button" aria-label="Close image viewer" data-viewer-close>×</button></div></div><div class="image-viewer-stage"><img data-viewer-image alt=""></div></div></div>
   </body>
@@ -596,6 +596,12 @@ function englishHomePage(chineseSource) {
   html = html.replaceAll('poster="assets/', 'poster="../assets/');
   html = html.replaceAll('data-viewer-src="assets/', 'data-viewer-src="../assets/');
   html = html.replaceAll('src="script.js', 'src="../script.js');
+  html = html.replace(/https:\/\/uri\.amap\.com\/search\?[^"\s]+/g, googleMapsUrl);
+  html = html.replace(
+    `class="location-map-card"\n              href="${googleMapsUrl}"\n              data-amap-card`,
+    `class="location-map-card"\n              href="${googleMapsUrl}"\n              target="_blank"\n              rel="noreferrer"`,
+  );
+  html = html.replace(/\n\s*<div class="map-confirm-dialog"[\s\S]*?\n\s*<div class="image-viewer"/, '\n\n    <div class="image-viewer"');
   html = html.replaceAll('tel:13425969730', 'tel:+8613425969730');
   html = html.replaceAll('>13425969730<', '>+86 13425969730<');
   html = html.replaceAll('"telephone": "13425969730"', '"telephone": "+86 13425969730"');
