@@ -1587,6 +1587,43 @@ body.has-wechat-save-dialog {
   font-weight: 800;
 }
 
+.english-site .contact-email-primary {
+  border-left: 4px solid var(--gold);
+  background: #fff8ea;
+}
+
+.english-site .contact-email-primary strong {
+  color: #7b5b20;
+}
+
+.english-site .contact-email-primary a {
+  color: #6f4f18;
+  font-size: 16px;
+  overflow-wrap: anywhere;
+}
+
+.english-site .wechat-card {
+  grid-template-columns: minmax(0, 1fr) 150px;
+}
+
+.english-site .wechat-card .wechat-qr-image {
+  width: 140px;
+  height: 140px;
+  justify-self: end;
+}
+
+.english-site .floating-qr-card .wechat-qr-image.small {
+  width: 108px;
+  height: 108px;
+  justify-self: center;
+}
+
+.english-site .email-shortcut {
+  border-color: rgba(184, 137, 47, 0.46);
+  background: #fff8ea;
+  color: #6f4f18;
+}
+
 .contact-actions {
   grid-column: 1 / -1;
   margin: 0;
@@ -2166,6 +2203,14 @@ body.has-wechat-save-dialog {
   .wechat-card {
     grid-template-columns: 1fr;
     padding: 16px;
+  }
+
+  .english-site .wechat-card {
+    grid-template-columns: 1fr;
+  }
+
+  .english-site .wechat-card .wechat-qr-image {
+    justify-self: start;
   }
 
   .wechat-qr-image {

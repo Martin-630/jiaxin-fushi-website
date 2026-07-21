@@ -7,6 +7,7 @@ const productRoot = path.join(siteRoot, "products");
 const englishRoot = path.join(siteRoot, "en");
 const englishProductRoot = path.join(englishRoot, "products");
 const today = "2026-07-21";
+const contactEmail = "ke050630@gmail.com";
 const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("嘉鑫服装辅料有限公司 广东省佛山市南海区盐步青龙大道南1号之1号")}`;
 
 const products = [
@@ -514,7 +515,7 @@ function englishProductPage(product, source) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>${escapeHtml(product.name)} Manufacturer | Jiaxin Garment Accessories</title>
     <meta name="description" content="${escapeHtml(product.meta)}">
-${bilingualHead(englishUrl, chineseUrl, englishUrl)}    <link rel="stylesheet" href="../../styles.css?v=20260721-bilingual">
+${bilingualHead(englishUrl, chineseUrl, englishUrl)}    <link rel="stylesheet" href="../../styles.css?v=20260721-email">
     <link rel="icon" href="../../assets/brand/logo.jpg">
     <script type="application/ld+json">${JSON.stringify({
       "@context": "https://schema.org",
@@ -541,7 +542,7 @@ ${bilingualHead(englishUrl, chineseUrl, englishUrl)}    <link rel="stylesheet" h
           <h1 id="detail-title">${product.name}</h1>
           <p>${product.description}</p>
           <div class="hero-tags detail-tags">${product.tags.map((tag) => `<span>${tag}</span>`).join("")}<span>MOQ: 2,000 pcs</span></div>
-          <div class="hero-actions detail-actions"><a class="button primary" href="tel:+8613425969730">Call Us</a><a class="button map" href="#detail-wechat-consult">WeChat</a><a class="button map" href="../index.html#products">Back to Products</a></div>
+          <div class="hero-actions detail-actions"><a class="button primary" href="mailto:${contactEmail}">Email Us</a><a class="button map" href="tel:+8613425969730">Call Us</a><a class="button map" href="#detail-wechat-consult">WeChat</a><a class="button map" href="../index.html#products">Back to Products</a></div>
         </div>
         <figure class="detail-hero-media"><img class="image-viewer-trigger${hero.contain ? " product-image-contain" : ""}" src="${heroSrc}" alt="${escapeHtml(product.name)} product overview" tabindex="0"><figcaption>Product overview</figcaption></figure>
       </section>
@@ -569,12 +570,12 @@ ${bilingualHead(englishUrl, chineseUrl, englishUrl)}    <link rel="stylesheet" h
         <div class="faq-grid">${faqMarkup}</div>
       </section>
       <section class="section contact-section detail-contact-section" id="detail-contact" aria-labelledby="detail-contact-title">
-        <div class="contact-panel"><div><div class="section-kicker">CONTACT</div><h2 id="detail-contact-title">Ask About ${product.shortName}</h2><p>Send sample images, specifications, dimensions, colors, and quantities by phone or WeChat for review.</p></div><div class="contact-route-card"><div class="route-tabs"><a href="tel:+8613425969730">Call Us</a><a href="${googleMapsUrl}" target="_blank" rel="noreferrer">Google Maps</a></div><address class="contact-list"><p><strong>Phone / WeChat</strong><a href="tel:+8613425969730">+86 13425969730</a></p><p><strong>Email</strong><a href="mailto:13425969730@163.com">13425969730@163.com</a></p><p><strong>Address</strong><span>No. 1-1, South Qinglong Avenue, Yanbu, Nanhai District, Foshan, Guangdong, China</span></p></address><div class="wechat-card" id="detail-wechat-consult"><div><h3>WeChat</h3><p>Scan the QR code and send sample images, specifications, colors, and quantities.</p><strong>Phone / WeChat: +86 13425969730</strong></div><img class="wechat-qr-image" src="../../assets/contact/微信二维码.jpg" alt="Jiaxin WeChat QR code" loading="lazy" decoding="async"></div><div class="contact-actions"><a class="button primary" href="tel:+8613425969730">Call Us</a><a class="button map" href="#detail-wechat-consult">WeChat</a><a class="button map" href="${googleMapsUrl}" target="_blank" rel="noreferrer">Google Maps</a></div></div></div>
+        <div class="contact-panel"><div><div class="section-kicker">CONTACT</div><h2 id="detail-contact-title">Ask About ${product.shortName}</h2><p>Email sample images, specifications, dimensions, colors, and quantities to ${contactEmail} for review. Phone and WeChat are also available.</p></div><div class="contact-route-card"><div class="route-tabs"><a href="mailto:${contactEmail}">Email Us</a><a href="${googleMapsUrl}" target="_blank" rel="noreferrer">Google Maps</a></div><address class="contact-list"><p class="contact-email-primary"><strong>Email</strong><a href="mailto:${contactEmail}">${contactEmail}</a></p><p><strong>Phone / WeChat</strong><a href="tel:+8613425969730">+86 13425969730</a></p><p><strong>Address</strong><span>No. 1-1, South Qinglong Avenue, Yanbu, Nanhai District, Foshan, Guangdong, China</span></p></address><div class="wechat-card" id="detail-wechat-consult"><div><h3>WeChat</h3><p>Scan the QR code and send sample images, specifications, colors, and quantities.</p><strong>Phone / WeChat: +86 13425969730</strong></div><img class="wechat-qr-image" src="../../assets/contact/微信二维码.jpg" alt="Jiaxin WeChat QR code" loading="lazy" decoding="async"></div><div class="contact-actions"><a class="button primary" href="mailto:${contactEmail}">Email Us</a><a class="button map" href="tel:+8613425969730">Call Us</a><a class="button map" href="#detail-wechat-consult">WeChat</a><a class="button map" href="${googleMapsUrl}" target="_blank" rel="noreferrer">Google Maps</a></div></div></div>
       </section>
     </main>
     <footer class="site-footer"><span>Jiaxin Garment Accessories Co., Ltd.</span><span>${product.shortName} · Direct Manufacturer · Custom Options</span></footer>
-    <aside class="floating-contact"><details class="floating-wechat"><summary>WeChat</summary><div class="floating-qr-card"><img class="wechat-qr-image small" src="../../assets/contact/微信二维码.jpg" alt="Jiaxin WeChat QR code" loading="lazy" decoding="async"><strong>Phone / WeChat: +86 13425969730</strong><span>Scan or add the number on WeChat to send sample images</span></div></details><a href="tel:+8613425969730">Call Us</a><a href="${googleMapsUrl}" target="_blank" rel="noreferrer">Google Maps</a></aside>
-    <nav class="mobile-contact-bar" aria-label="Mobile contact"><a href="tel:+8613425969730"><strong>Call</strong><span>+86 13425969730</span></a><a href="#detail-wechat-consult"><strong>WeChat</strong><span>Same Number</span></a><a href="mailto:13425969730@163.com"><strong>Email</strong><span>Send Inquiry</span></a></nav>
+    <aside class="floating-contact"><details class="floating-wechat"><summary>WeChat</summary><div class="floating-qr-card"><img class="wechat-qr-image small" src="../../assets/contact/微信二维码.jpg" alt="Jiaxin WeChat QR code" loading="lazy" decoding="async"><strong>Phone / WeChat: +86 13425969730</strong><span>Scan or add the number on WeChat to send sample images</span></div></details><a class="email-shortcut" href="mailto:${contactEmail}">Email Us</a><a href="tel:+8613425969730">Call Us</a><a href="${googleMapsUrl}" target="_blank" rel="noreferrer">Google Maps</a></aside>
+    <nav class="mobile-contact-bar" aria-label="Mobile contact"><a class="email-shortcut" href="mailto:${contactEmail}"><strong>Email</strong><span>Send Inquiry</span></a><a href="tel:+8613425969730"><strong>Call</strong><span>+86 13425969730</span></a><a href="${googleMapsUrl}" target="_blank" rel="noreferrer"><strong>Google Maps</strong><span>Factory Visit</span></a></nav>
     <div class="image-viewer" data-image-viewer hidden role="dialog" aria-modal="true" aria-labelledby="viewer-title"><button class="image-viewer-backdrop" type="button" aria-label="Close image viewer" data-viewer-close></button><div class="image-viewer-panel"><div class="image-viewer-toolbar"><div class="image-viewer-heading"><strong id="viewer-title" data-viewer-title>Product Image</strong><span>Mouse-wheel zoom · Pinch to zoom · Drag to pan</span></div><div class="image-viewer-actions"><button type="button" aria-label="Close image viewer" data-viewer-close>×</button></div></div><div class="image-viewer-stage"><img data-viewer-image alt=""></div></div></div>
   </body>
 </html>
@@ -596,6 +597,32 @@ function englishHomePage(chineseSource) {
   html = html.replaceAll('poster="assets/', 'poster="../assets/');
   html = html.replaceAll('data-viewer-src="assets/', 'data-viewer-src="../assets/');
   html = html.replaceAll('src="script.js', 'src="../script.js');
+  html = html.replace('styles.css?v=20260721-bilingual', 'styles.css?v=20260721-email');
+  html = html.replaceAll('13425969730@163.com', contactEmail);
+  html = html.replace(
+    '<div class="hero-actions" aria-label="Quick contact">\n            <a class="button primary" href="tel:13425969730">Call Us</a>',
+    `<div class="hero-actions" aria-label="Quick contact">\n            <a class="button primary" href="mailto:${contactEmail}">Email Us</a>\n            <a class="button secondary" href="tel:13425969730">Call Us</a>`,
+  );
+  html = html.replace(
+    '<p class="hero-contact-note">Phone / WeChat: +86 13425969730</p>',
+    `<p class="hero-contact-note">Email: ${contactEmail} · Phone / WeChat: +86 13425969730</p>`,
+  );
+  html = html.replace(
+    `<p><strong>Email</strong><a href="mailto:${contactEmail}">${contactEmail}</a></p>`,
+    `<p class="contact-email-primary"><strong>Email</strong><a href="mailto:${contactEmail}">${contactEmail}</a></p>`,
+  );
+  html = html.replace(
+    '<div class="contact-actions">\n              <a class="button primary" href="tel:13425969730">Call Now</a>',
+    `<div class="contact-actions">\n              <a class="button primary" href="mailto:${contactEmail}">Email Us</a>\n              <a class="button map" href="tel:13425969730">Call Now</a>`,
+  );
+  html = html.replace(
+    '</details>\n      <a href="tel:13425969730">Call Us</a>',
+    `</details>\n      <a class="email-shortcut" href="mailto:${contactEmail}">Email Us</a>\n      <a href="tel:13425969730">Call Us</a>`,
+  );
+  html = html.replace(
+    '<nav class="mobile-contact-bar" aria-label="Mobile contact shortcuts">\n      <a href="tel:13425969730">\n        <strong>Call Us</strong>\n        <span>13425969730</span>\n      </a>\n      <a href="#wechat-consult">\n        <strong>WeChat</strong>\n        <span>Same Number</span>\n      </a>',
+    `<nav class="mobile-contact-bar" aria-label="Mobile contact shortcuts">\n      <a class="email-shortcut" href="mailto:${contactEmail}">\n        <strong>Email</strong>\n        <span>Send Inquiry</span>\n      </a>\n      <a href="tel:13425969730">\n        <strong>Call Us</strong>\n        <span>13425969730</span>\n      </a>`,
+  );
   html = html.replace(/https:\/\/uri\.amap\.com\/search\?[^"\s]+/g, googleMapsUrl);
   html = html.replace(
     `class="location-map-card"\n              href="${googleMapsUrl}"\n              data-amap-card`,
